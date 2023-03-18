@@ -1,0 +1,7 @@
+.fg{
+    color:blue;
+    cursor:pointer;
+}
+.fg:hover{
+    color:black;
+}
