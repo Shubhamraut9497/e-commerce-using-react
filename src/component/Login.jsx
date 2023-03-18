@@ -43,7 +43,7 @@ function Login() {
           <Form.Control type="password" placeholder="Password" className="w-100 mt-3" name="password" value={data.password} onChange={handleChange}/>
         </Form.Group>
         <Button variant="primary" className="w-100 mt-3 mb-3" onClick={submit}>Login</Button>
-        <span className="md-3">Not registered ? <span clasName="text-primary fg" style={{cursor:'pointer',color:'blue'}} onClick={()=>navigate('/signup')}>click here</span></span>
+        <span className="md-3">Not registered ? <span className="text-primary fg" style={{cursor:'pointer',color:'blue'}} onClick={()=>navigate('/signup')}>click here</span></span>
         <Toaster position="top-right" reverseOrder={false} />
       </Form>
     </div>

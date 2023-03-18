@@ -14,13 +14,14 @@ function ProductInfo() {
   const {id}=useParams();
   const [product,setProduct]=useState({});
   const [loading,setLoading]=useState(false);
-
+  console.log(id);
   useEffect(()=>{
        const getProduct=async()=>{
           setLoading(true);
-          const response=await fetch(`https://fakestoreapi.com/products/${id}`)
+          const response=await fetch(`https://dummyjson.com/products/${id}`)
           setProduct(await response.json());
           setLoading(false);
+          
        }
        getProduct();
   },[])
@@ -28,7 +29,7 @@ function ProductInfo() {
     dispatch(addItem(product));
   }
 
-
+console.log(product);
 const Loading=()=>{
   return (
     <>
@@ -48,27 +49,48 @@ const Loading=()=>{
     </>
   )
 }
-const ShowProduct=()=>{
+const ShowProduct = () => {
   return (
     <>
-    <div className="col-md-6" key={product.id} >
-      <img src={product.image} alt={product.title} height={400} width={400}/>
-    </div>
-    <div className='col-md-6'>
-      <h4 className='text-uppercase text-black-50'>{product.category}</h4>
-      <h1 className="display-5">{product.title}</h1>
-      <p className="lead fw-bold">
-       Rating {product.rating && product.rating.rate}
-       <AiFillStar/>
-      </p>
-      <h3 className="display-6 fw-bold my-4">$ {product.price}</h3>
-      <p className="lead">{product.description}</p>
-      <button className='btn btn-outline-dark me-2' onClick={() => dataTransfer(product)}>Add to cart</button>
-      <button className='btn btn-dark me-2' onClick={()=>navigate("/payment")}>Buy Now</button>
-    </div>
+      {product && product.images && (
+        <>
+          <div className="col-md-6" key={product.id}>
+            <img
+              src={product.images[0]}
+              alt={product.title}
+              height={400}
+              width={400}
+            />
+          </div>
+          <div className="col-md-6">
+            <h4 className="text-uppercase text-black-50">{product.category}</h4>
+            <h1 className="display-5">{product.title}</h1>
+            <p className="lead fw-bold">
+              Rating {product.rating}
+              <AiFillStar />
+            </p>
+            <h3 className="display-6 fw-bold my-4">$ {product.price}</h3>
+            <p className="lead">{product.description}</p>
+            <button
+              className="btn btn-outline-dark me-2"
+              onClick={() => dataTransfer(product)}
+            >
+              Add to cart
+            </button>
+            <button
+              className="btn btn-dark me-2"
+              onClick={() => navigate("/payment")}
+            >
+              Buy Now
+            </button>
+          </div>
+        </>
+      )}
     </>
-  )
-}
+  );
+};
+
+
   return (
     <div>
       <div className="container py-5">
