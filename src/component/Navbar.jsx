@@ -34,7 +34,7 @@ function Navbars() {
             <Form className="d-flex">
               <Button variant="outline-success" className="btn btn-outline-dark ms-2" onClick={()=>navigate("/login")}><span className="me-1"><BiLogIn/></span>Login</Button>
               <Button variant="outline-success" className="btn btn-outline-dark ms-2" onClick={()=>navigate("/signup")}><span className="me-1"><FaUserPlus/></span>Register</Button>
-              <Button variant="outline-success" className="btn btn-outline-dark ms-2" onClick={()=>navigate("/cart")}><span className="me-1"><BsCart4/></span>Cart (0)</Button>
+              <Button variant="outline-success" className="btn btn-outline-dark ms-2" onClick={()=>navigate("/cart")}><span className="me-1"><BsCart4/></span>Cart</Button>
             </Form>
           </Navbar.Collapse>
         </Container>

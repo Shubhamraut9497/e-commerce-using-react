@@ -8,7 +8,7 @@ export const userSlice = createSlice({
   reducers: {
     addItem: (state, action) => {
       const item = action.payload;
-      console.log(item);
+      // console.log(action.payload)
       const existingItem = state.cart.find((i) => i.id === item.id);
       if (existingItem) {
         existingItem.quantity += item.quantity;
@@ -24,5 +24,4 @@ export const userSlice = createSlice({
 });
 
 export const { addItem, deleteItem } = userSlice.actions;
-
 export default userSlice.reducer;
