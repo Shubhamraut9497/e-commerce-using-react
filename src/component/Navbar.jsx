@@ -10,7 +10,9 @@ import {FaUserPlus} from 'react-icons/fa'
 import {BsCart4} from 'react-icons/bs'
 import { useNavigate } from "react-router-dom";
 
+
 function Navbars() {
+
   const navigate=useNavigate();
   return (
     <div>

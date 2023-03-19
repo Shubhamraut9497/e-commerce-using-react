@@ -79,7 +79,7 @@ function ProductInfo() {
               </button>
               <button
                 className="btn btn-dark me-2"
-                onClick={() => navigate("/payment")}
+                onClick={() => navigate("/payment",{state:{data:product.price}})}
               >
                 Buy Now
               </button>
