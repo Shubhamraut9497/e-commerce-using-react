@@ -22,8 +22,6 @@ function Login() {
     if(!data.email || !data.password){
       toast.error("please fill all details")
     }
-   
-    
     const val=localStorage.getItem("email")
     const val2=localStorage.getItem("password");
     if(val===data.email && val2===data.password){
