@@ -13,7 +13,7 @@ function ProductInfo() {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
-  console.log(id);
+
   useEffect(() => {
     const getProduct = async () => {
       setLoading(true);
@@ -22,13 +22,11 @@ function ProductInfo() {
       setLoading(false);
     };
     getProduct();
-  }, []);
+  }, [id]);
   const dataTransfer = (product) => {
     dispatch(addItem(product));
     toast.success("Added to Cart");
   };
-
-  console.log(product);
   const Loading = () => {
     return (
       <>
@@ -52,7 +50,7 @@ function ProductInfo() {
       <>
         {product && product.images && (
           <>
-            <div className="col-md-6" key={product.id}>
+            <div className="col-md-6" key={product.id+1}>
               <img
                 src={product.images[0]}
                 alt={product.title}

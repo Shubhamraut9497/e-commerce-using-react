@@ -9,9 +9,10 @@ function Products() {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState([]);
   const [loading, setLoading] = useState(false);
-  let componentMounted = true;
+  
 
   useEffect(() => {
+    let componentMounted = true;
     const getProducts = async () => {
       setLoading(true);
       const response = await fetch(`https://dummyjson.com/products`);
@@ -88,7 +89,7 @@ function Products() {
           filter.products.map((product) => {
             return (
               <>
-                <div className="col-md-3 mb-4" key={product.id}>
+                <div className="col-md-3 mb-4" key={product.id+10}>
                   <Card
                     style={{ width: "18rem" }}
                     className="h-100 text-center p-4"

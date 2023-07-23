@@ -17,7 +17,7 @@ function App() {
 
   // Only show Navbar on routes other than "/payment"
   const showNavbar = location.pathname !== "/payment";
-  const cartShow =location.pathname !="/success"
+  const cartShow =location.pathname !=="/success"
   return (
     <div>
       {(showNavbar && cartShow)  && <Navbar />}
@@ -33,7 +33,6 @@ function App() {
         <Route path="/payment" element={<Payment/>}/>
         <Route path="/success" element={<Success/>}/>
       </Routes>
-      
     </div>
   );
 }

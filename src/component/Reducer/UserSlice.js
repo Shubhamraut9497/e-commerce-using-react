@@ -8,20 +8,35 @@ export const userSlice = createSlice({
   reducers: {
     addItem: (state, action) => {
       const item = action.payload;
-      // console.log(action.payload)
+      console.log(action.payload);
       const existingItem = state.cart.find((i) => i.id === item.id);
       if (existingItem) {
-        existingItem.quantity += item.quantity;
+        existingItem.quantity += 1;
       } else {
-        state.cart = [...state.cart, item];
+        state.cart.push({ ...item, quantity: 1 });
       }
     },
     deleteItem: (state, action) => {
       const id = action.payload;
       state.cart = state.cart.filter((i) => i.id !== id);
     },
+    IncrementItem: (state, action) => {
+      const id = action.payload;
+      const item = state.cart.find((i) => i.id === id);
+      if (item) {
+        // Increase the quantity of the item in the cart
+        item.quantity += 1;
+      }
+    },
+    decrementItem: (state, action) => {
+      const id = action.payload;
+      const item = state.cart.find((i) => i.id === id);
+      if (item && item.quantity > 0) { // Check if the quantity is greater than 0
+        item.quantity -= 1;
+      }
+    },
   },
 });
 
-export const { addItem, deleteItem } = userSlice.actions;
+export const { addItem, deleteItem, IncrementItem, decrementItem } = userSlice.actions;
 export default userSlice.reducer;
