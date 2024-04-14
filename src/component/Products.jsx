@@ -91,7 +91,6 @@ function Products() {
               <>
                 <div className="col-md-3 mb-4" key={product.id+10}>
                   <Card
-                    style={{ width: "18rem" }}
                     className="h-100 text-center p-4"
                     key={product.id}
                   >
