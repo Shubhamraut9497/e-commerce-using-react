@@ -54,8 +54,7 @@ function ProductInfo() {
               <img
                 src={product.images[0]}
                 alt={product.title}
-                height={400}
-                width={400}
+               
               />
             </div>
             <div className="col-md-6">

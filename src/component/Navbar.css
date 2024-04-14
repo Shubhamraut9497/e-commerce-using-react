@@ -4,6 +4,7 @@
 }
 .navbar-nav a {
   font-size: 18px;
+  margin-left: 10px;
 }
 .navbar-cart-quantity {
   background-color: black;

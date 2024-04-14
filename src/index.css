@@ -1,13 +1,29 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Montserrat', sans-serif !important; /* Use Montserrat font */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #ecefef !important;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+
+.overlay {
+  position: absolute; /* Position the overlay relative to its parent container */
+  top: 0; /* Position from the top */
+  left: 0; /* Position from the left */
+  width: 100%; /* Cover the entire width of the parent container */
+  height: 100%; /* Cover the entire height of the parent container */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  pointer-events: none; /* Allows clicks to go through the overlay to the underlying content */
+}
+.contact-info{
+  display: flex;
+  gap: 20px;
+}
+.mobile-icon {
+  transform: scaleX(-1);
+}
+.form-group{
+  margin-top:30px;
 }
